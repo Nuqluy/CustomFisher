@@ -1,12 +1,26 @@
 package nuqluy.customfisher;
 
+import nuqluy.customfisher.EventHandler.Fishing;
+import nuqluy.customfisher.Items.ItemManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class CustomFisher extends JavaPlugin {
 
+    public static CustomFisher plugin;
+
     @Override
     public void onEnable() {
+        plugin = this;
         // Plugin startup logic
+        Bukkit.getLogger().info("CustomFisher Loaded!");
+
+        // Import items
+        ItemManager.init();
+
+
+        // Import events/handlers
+        new Fishing(this);
 
     }
 
