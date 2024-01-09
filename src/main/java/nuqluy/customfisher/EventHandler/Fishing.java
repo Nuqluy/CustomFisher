@@ -31,7 +31,6 @@ public class Fishing implements Listener {
             caught.setItemStack(rolled_item);
             player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName());
 
-            EconomyResponse createBank;
 
 //            caught.setItemStack(ItemManager.coral1);
 //            player.sendMessage("§bYou caught a "+ItemManager.coral1.getItemMeta().getDisplayName());
