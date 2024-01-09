@@ -10,13 +10,13 @@ public class ItemRoller {
     public static ItemStack roller() {
         ItemStack rolled_item = null;
         Random random = new Random();
-        int roll = 0;
+        int roll;
         roll = random.nextInt(1001);
         Bukkit.getLogger().info(String.valueOf(roll));
 
         if (roll <= 500) {
             rolled_item = ItemManager.coral1;
-        } else if (roll <= 1000) {
+        } else { // when value rolled is less than 1000
             rolled_item = ItemManager.coral2;
         }
 

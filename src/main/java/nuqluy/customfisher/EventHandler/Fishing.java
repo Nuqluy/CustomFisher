@@ -1,5 +1,6 @@
 package nuqluy.customfisher.EventHandler;
 
+import net.milkbowl.vault.economy.EconomyResponse;
 import nuqluy.customfisher.CustomFisher;
 import nuqluy.customfisher.Items.ItemManager;
 import nuqluy.customfisher.Items.ItemRoller;
@@ -27,23 +28,19 @@ public class Fishing implements Listener {
 
             ItemStack rolled_item = ItemRoller.roller();
 
-
-
             caught.setItemStack(rolled_item);
             player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName());
 
+            EconomyResponse createBank;
+
 //            caught.setItemStack(ItemManager.coral1);
 //            player.sendMessage("§bYou caught a "+ItemManager.coral1.getItemMeta().getDisplayName());
-
-
+//
 //            ItemStack item = caught.getItemStack();
 //
 //            ItemMeta meta = item.getItemMeta();
 //            meta.setDisplayName("apple");
 //            item.setItemMeta(meta);
-
-
-
         }
     }
 
