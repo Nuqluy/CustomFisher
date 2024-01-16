@@ -12,6 +12,9 @@ public final class CustomFisher extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+
+        saveDefaultConfig();
+
         // Plugin startup logic
         Bukkit.getLogger().info("CustomFisher Loaded!");
 

@@ -4,6 +4,7 @@ import net.milkbowl.vault.economy.EconomyResponse;
 import nuqluy.customfisher.CustomFisher;
 import nuqluy.customfisher.Items.ItemManager;
 import nuqluy.customfisher.Items.ItemRoller;
+import nuqluy.customfisher.Tracking.StatsTracker;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -30,6 +31,8 @@ public class Fishing implements Listener {
 
             caught.setItemStack(rolled_item);
             player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName());
+
+            StatsTracker.addNewStat(rolled_item.getItemMeta().getLore(),player);
 
 
 //            caught.setItemStack(ItemManager.coral1);

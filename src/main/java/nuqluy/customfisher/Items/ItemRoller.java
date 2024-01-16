@@ -14,10 +14,16 @@ public class ItemRoller {
         roll = random.nextInt(1001);
         Bukkit.getLogger().info(String.valueOf(roll));
 
-        if (roll <= 500) {
+        if (roll <= 200) {
             rolled_item = ItemManager.coral1;
-        } else { // when value rolled is less than 1000
+        } else if (roll <= 400) { // when value rolled is less than 1000
             rolled_item = ItemManager.coral2;
+        } else if (roll <= 600) { // when value rolled is less than 1000
+            rolled_item = ItemManager.coral3;
+        } else if (roll <= 800) { // when value rolled is less than 1000
+            rolled_item = ItemManager.coral4;
+        } else { // when value rolled is less than 1000
+            rolled_item = ItemManager.coral5;
         }
 
 
