@@ -2,3 +2,8 @@ name: CustomFisher
 version: '${project.version}'
 main: nuqluy.customfisher.CustomFisher
 api-version: '1.20'
+commands:
+  fish:
+    description: Opens the CustomFisher menu!
+    usage: /fish
+    aliases: [ f ]

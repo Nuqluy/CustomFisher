@@ -13,6 +13,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fishing implements Listener {
 
 //    FileConfiguration config = CustomFisher.plugin.getConfig();
@@ -32,7 +35,9 @@ public class Fishing implements Listener {
             caught.setItemStack(rolled_item);
             player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName());
 
-            StatsTracker.addNewStat(rolled_item.getItemMeta().getLore(),player);
+            ArrayList<String> lore = (ArrayList<String>) rolled_item.getItemMeta().getLore();
+
+//            StatsTracker.addNewStat(lore,player); // BROKEN AS FUCK BRO WHY
 
 
 //            caught.setItemStack(ItemManager.coral1);

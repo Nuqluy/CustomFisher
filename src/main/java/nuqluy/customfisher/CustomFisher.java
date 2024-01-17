@@ -1,5 +1,6 @@
 package nuqluy.customfisher;
 
+import nuqluy.customfisher.Commands.GUIMenu;
 import nuqluy.customfisher.EventHandler.Fishing;
 import nuqluy.customfisher.Items.ItemManager;
 import org.bukkit.Bukkit;
@@ -21,6 +22,8 @@ public final class CustomFisher extends JavaPlugin {
         // Import items
         ItemManager.init();
 
+        // Import commands
+        getCommand("fish").setExecutor(new GUIMenu(this));
 
         // Import events/handlers
         new Fishing(this);
