@@ -1,6 +1,5 @@
 package nuqluy.customfisher.EventHandler;
 
-import net.milkbowl.vault.economy.EconomyResponse;
 import nuqluy.customfisher.CustomFisher;
 import nuqluy.customfisher.Items.ItemManager;
 import nuqluy.customfisher.Items.ItemRoller;
@@ -37,7 +36,7 @@ public class Fishing implements Listener {
 
             ArrayList<String> lore = (ArrayList<String>) rolled_item.getItemMeta().getLore();
 
-//            StatsTracker.addNewStat(lore,player); // BROKEN AS FUCK BRO WHY
+            StatsTracker.addNewStat(lore,player);
 
 
 //            caught.setItemStack(ItemManager.coral1);
