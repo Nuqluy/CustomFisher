@@ -21,6 +21,15 @@ public class ItemManager {
     public static ItemStack fish3;
     public static ItemStack fish4 ;
     public static ItemStack fish5;
+    public static ItemStack treasure1;
+    public static ItemStack treasure2;
+    public static ItemStack treasure3;
+    public static ItemStack treasure4;
+    public static ItemStack treasure5;
+    public static ItemStack treasure6;
+    public static ItemStack treasure7;
+    public static ItemStack treasure8;
+    public static ItemStack treasure9;
 
 
     public static void init() {
@@ -34,6 +43,15 @@ public class ItemManager {
         createFish3();
         createFish4();
         createFish5();
+        createTreasure1();
+        createTreasure2();
+        createTreasure3();
+        createTreasure4();
+        createTreasure5();
+        createTreasure6();
+        createTreasure7();
+        createTreasure8();
+        createTreasure9();
 
 
     }
@@ -193,7 +211,7 @@ public class ItemManager {
     }
 
     private static void createFish5() {
-        ItemStack item = new ItemStack(Material.BUBBLE_CORAL, 1); // create new one item
+        ItemStack item = new ItemStack(Material.PUFFERFISH, 1); // create new one item
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§ePufferfish"); // set name of item
 
@@ -209,16 +227,158 @@ public class ItemManager {
         fish5 = item;
     }
 
+    private static void createTreasure1() {
+        ItemStack item = new ItemStack(Material.IRON_INGOT, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§eIron Bar"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure1 = item;
+    }
+
+    private static void createTreasure2() {
+        ItemStack item = new ItemStack(Material.EMERALD, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§aGem"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure2 = item;
+    }
+
+    private static void createTreasure3() {
+        ItemStack item = new ItemStack(Material.FLOWER_BANNER_PATTERN, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§fPaper Scroll"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure3 = item;
+    }
+
+    private static void createTreasure4() {
+        ItemStack item = new ItemStack(Material.GLOWSTONE_DUST, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§eGold Cluster"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure4 = item;
+    }
+
+    private static void createTreasure5() {
+        ItemStack item = new ItemStack(Material.GOLD_INGOT, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§eGold Bar"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure5 = item;
+    }
+
+    private static void createTreasure6() {
+        ItemStack item = new ItemStack(Material.LEAD, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§cRope"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure6 = item;
+    }
+
+    private static void createTreasure7() {
+        ItemStack item = new ItemStack(Material.NETHERITE_SCRAP, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§7Scrap"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure7 = item;
+    }
+
+    private static void createTreasure8() {
+        ItemStack item = new ItemStack(Material.NETHER_STAR, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§eStar Pendant"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure8 = item;
+    }
+
+    private static void createTreasure9() {
+        ItemStack item = new ItemStack(Material.HEART_OF_THE_SEA, 1); // create new one item
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§9Sea Pearl"); // set name of item
+
+
+        List<String> lore = new ArrayList<>(); // lore attachment
+        lore.add("§r§7§oTreasure");
+        meta.setLore(lore);
+
+        // set item meta
+        item.setItemMeta(meta);
+
+        // assign item
+        treasure9 = item;
+    }
+
 }
 
-
-//        // example lore code
-//        List<String> lore = new ArrayList<>();
-//        lore.add("testing1");
-//        lore.add("testing2");
-//        lore.add("testing3");
-//        meta.setLore(lore);
-
-//        // example enchant code
-//        meta.addEnchant(Enchantment.LUCK, 1, false); // always keep false
-//        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS); // do ItemFlag. to show all item flags
