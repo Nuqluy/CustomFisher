@@ -22,7 +22,9 @@ import java.util.List;
 public class GUIMenu implements Listener, CommandExecutor {
     private String invName = "§b§lCustomFisher";
 
-    public GUIMenu(CustomFisher plugin) { Bukkit.getPluginManager().registerEvents(this, plugin); }
+    public GUIMenu(CustomFisher plugin) {
+        Bukkit.getPluginManager().registerEvents(this, plugin);
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -32,33 +34,38 @@ public class GUIMenu implements Listener, CommandExecutor {
 
         int page = 0;
 
-        if (event.getView().getTitle().equals(invName)) {page = 1;}
+        if (event.getView().getTitle().equals(invName)) {
+            page = 1;
+        }
 
         Player player = (Player) event.getWhoClicked();
         int slot = event.getSlot();
 
-        if (slot == 12 && page == 1) {
+        if (slot == 11 && page == 1) {
             ArrayList<String> data = StatsTracker.viewStats(player);
             String newData = data.toString();
             newData = newData.substring(1, newData.length() - 1);
             player.sendMessage(newData.split(", "));
-        }
-        else if (slot == 14 && page == 1) {
+        } else if (slot == 13 && page == 1) {
+            Inventory pageTwo = Bukkit.createInventory(player, 9 * 3, "§b§lLeaderboards");
+
+            pageTwo.setItem(10, getItem(new ItemStack(Material.COD), "&3&lTop Fish Caught", "&cCOMING SOON"));
+            pageTwo.setItem(12, getItem(new ItemStack(Material.TUBE_CORAL), "&3&lTop Coral Caught", "&cCOMING SOON"));
+            pageTwo.setItem(14, getItem(new ItemStack(Material.CHEST), "&3&lTop Treasure Caught", "&cCOMING SOON"));
+            pageTwo.setItem(16, getItem(new ItemStack(Material.FISHING_ROD), "&3&lTop Overall Caught", "&cCOMING SOON"));
 
 
+            player.openInventory(pageTwo);
+        } else if (slot == 15 && page == 1) {
             List<String> userData = new ArrayList<>();
-
-
             player.sendMessage(userData.toString());
-
-
         }
 
         event.setCancelled(true);
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String [] args) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("Only players can run this command");
             return true;
@@ -68,8 +75,9 @@ public class GUIMenu implements Listener, CommandExecutor {
 
         Inventory inv = Bukkit.createInventory(player, 9 * 3, invName);
 
-        inv.setItem(12, getItem(new ItemStack(Material.ENCHANTED_BOOK), "&3&lFishing Progress", "&bClick to see your fishing progress!"));
-        inv.setItem(14, getItem(new ItemStack(Material.ENCHANTED_BOOK), "&3&lFishing Leaderboard", "&bClick to see the leaderboard!"));
+        inv.setItem(11, getItem(new ItemStack(Material.ENCHANTED_BOOK), "&3&lFishing Progress", "&bClick to see your fishing progress!"));
+        inv.setItem(15, getItem(new ItemStack(Material.ENCHANTED_BOOK), "&3&lAchievements", "&cCOMING SOON"));
+        inv.setItem(13, getItem(new ItemStack(Material.ENCHANTED_BOOK), "&3&lFishing Leaderboard", "&bClick to see the leaderboard!"));
 
 
         player.openInventory(inv);
@@ -78,7 +86,7 @@ public class GUIMenu implements Listener, CommandExecutor {
     }
 
 
-    private ItemStack getItem(ItemStack item, String name, String ... lore) {
+    private ItemStack getItem(ItemStack item, String name, String... lore) {
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
