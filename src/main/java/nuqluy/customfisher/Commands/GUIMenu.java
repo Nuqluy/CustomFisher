@@ -57,8 +57,7 @@ public class GUIMenu implements Listener, CommandExecutor {
 
             player.openInventory(pageTwo);
         } else if (slot == 15 && page == 1) {
-            List<String> userData = new ArrayList<>();
-            player.sendMessage(userData.toString());
+            return;
         }
 
         event.setCancelled(true);
