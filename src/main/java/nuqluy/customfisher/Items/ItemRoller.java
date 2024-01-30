@@ -7,6 +7,12 @@ import java.util.Random;
 
 public class ItemRoller {
 
+    /**
+     * Throw a random number to be accessed by an
+     * if statement in order to randomly generate
+     * the item pulled out of the water.
+     * @return the item rolled
+     */
     public static ItemStack roller() {
         ItemStack rolled_item = null;
         Random random = new Random();

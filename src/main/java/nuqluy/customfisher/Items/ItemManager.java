@@ -9,8 +9,20 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+* In this class there is a lot of repetition due to
+* how the build of the spigot/bukkit framework is made.
+* There are many methods that do the exact same thing
+* asides from a title change and a lore change
+* the content is mostly the same.
+*
+* With this in mind I will only comment for the first reference of each type of method/variable.
+ */
+
 public class ItemManager {
 
+    // Create item variables to be accessed
     public static ItemStack coral1;
     public static ItemStack coral2;
     public static ItemStack coral3;
@@ -32,7 +44,11 @@ public class ItemManager {
     public static ItemStack treasure9;
 
 
+    /**
+     * Export the items to the main plugin file to be created
+     */
     public static void init() {
+        // Item methods as referenced.
         createCoral1();
         createCoral2();
         createCoral3();
@@ -56,6 +72,13 @@ public class ItemManager {
 
     }
 
+    /**
+     * method createCoral1()
+     * Method creates ItemStack item that will
+     * give the item a custom name and tagline.
+     * Using the tagline will allow the category
+     * of the item to be accessed at a later time.
+     */
     private static void createCoral1() {
         ItemStack item = new ItemStack(Material.HORN_CORAL, 1); // create new one item
         ItemMeta meta = item.getItemMeta();

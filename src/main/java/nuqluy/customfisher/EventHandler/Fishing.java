@@ -17,36 +17,32 @@ import java.util.List;
 
 public class Fishing implements Listener {
 
-//    FileConfiguration config = CustomFisher.plugin.getConfig();
-
+    // Register plugin events
     public Fishing(CustomFisher plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
+    /**
+     * This event listens for a player catching a fish
+     * and then will generate the item to give them
+     * and add to their statistics respectively.
+     * @param event the referenced event PlayerFishEvent
+     */
     @EventHandler
     public void onFish(PlayerFishEvent event) {
         if (event.getCaught() instanceof Item) {
-            Item caught = (Item) event.getCaught();
-            Player player = event.getPlayer();
+            Item caught = (Item) event.getCaught(); // Get caught item
+            Player player = event.getPlayer(); // Get player in referenced event
 
-            ItemStack rolled_item = ItemRoller.roller();
+            ItemStack rolled_item = ItemRoller.roller(); // Generate item
 
-            caught.setItemStack(rolled_item);
-            player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName());
+            caught.setItemStack(rolled_item); // The item gets set
+            player.sendMessage("§bYou caught a "+rolled_item.getItemMeta().getDisplayName()); // tell the player what they caught
 
-            ArrayList<String> lore = (ArrayList<String>) rolled_item.getItemMeta().getLore();
+            ArrayList<String> lore = (ArrayList<String>) rolled_item.getItemMeta().getLore(); // Get the item meta
 
-            StatsTracker.addNewStat(lore,player);
+            StatsTracker.addNewStat(lore,player); // Supply the referenced player and item meta and add to statistics tracker
 
-
-//            caught.setItemStack(ItemManager.coral1);
-//            player.sendMessage("§bYou caught a "+ItemManager.coral1.getItemMeta().getDisplayName());
-//
-//            ItemStack item = caught.getItemStack();
-//
-//            ItemMeta meta = item.getItemMeta();
-//            meta.setDisplayName("apple");
-//            item.setItemMeta(meta);
         }
     }
 
