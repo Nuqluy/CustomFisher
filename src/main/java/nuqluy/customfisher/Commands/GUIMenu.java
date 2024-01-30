@@ -56,9 +56,15 @@ public class GUIMenu implements Listener, CommandExecutor {
 
 
             player.openInventory(pageTwo);
+
         } else if (slot == 15 && page == 1) {
-            return;
+            player.sendMessage("This feature is currently not available yet! Check back later for more updates on this feature.");
         }
+        else if (slot == 10 && page == 2) { player.sendMessage("This feature is currently not available yet! Check back later for more updates on this feature."); }
+        else if (slot == 12 && page == 2) { player.sendMessage("This feature is currently not available yet! Check back later for more updates on this feature."); }
+        else if (slot == 14 && page == 2) { player.sendMessage("This feature is currently not available yet! Check back later for more updates on this feature."); }
+        else if (slot == 16 && page == 2) { player.sendMessage("This feature is currently not available yet! Check back later for more updates on this feature."); }
+
 
         event.setCancelled(true);
     }
